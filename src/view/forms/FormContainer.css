@@ -1,0 +1,83 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  align-self: center;
+  gap: 3rem;
+  margin: 2rem;
+  padding: 2rem 2.5rem;
+  border: 1px solid var(--color-mono-600);
+  border-radius: 1rem;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--form-group-gap);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.form-subgroup {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--form-group-gap);
+}
+
+.w-full {
+  flex: 1 1 100%;
+}
+
+.w-1-2 {
+  flex: 1 1 calc(50% - (var(--form-group-gap) / 2));
+}
+
+.w-1-3 {
+  flex: 1 1 calc(33.333% - (var(--form-group-gap) * 2 / 3));
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-mono-ccc);
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--color-mono-eee);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .w-1-3 {
+    flex: 1 1 calc(50% - (var(--form-group-gap) / 2));
+  }
+}
+
+@media (max-width: 500px) {
+  .w-1-2,
+  .w-1-3 {
+    flex: 1 1 100%;
+  }
+  .form-subgroup {
+    flex-wrap: wrap;
+  }
+}
