@@ -5,7 +5,7 @@ import ContactInfo from "/src/view/components/ContactInfo";
 import Education from "/src/view/components/Education";
 import Experience from "/src/view/components/Experience";
 import Headline from "/src/view/components/Headline";
-import Skills from "/src/view/components/Skills";
+import LCSkills from "/src/view/components/LCSkills";
 
 export default function FormContainer() {
   const [formData, setFormData] = useState(null);
@@ -44,7 +44,7 @@ export default function FormContainer() {
         <Headline initialValues={formData} />
         <Education initialValues={formData} />
         <Experience initialValues={formData} />
-        <Skills initialValues={formData} />
+        <LCSkills initialValues={formData} />
         {/* diversity */}
         {/* references */}
         {/* socials */}
