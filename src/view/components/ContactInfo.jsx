@@ -1,15 +1,17 @@
+import { useFormContext } from "react-hook-form";
 import PronounOptions from "./PronounOptions";
 
-export default function ContactInfo({ initialValues }) {
+export default function ContactInfo() {
+  const { register } = useFormContext();
+
   return (
     <section className="contact-info">
       <div className="form-group w-1-3">
         <label htmlFor="first-name">First name*</label>
         <input
           type="text"
-          name="firstName"
+          {...register("contact.firstName")}
           id="first-name"
-          defaultValue={initialValues?.firstName || ""}
           required
         />
       </div>
@@ -17,9 +19,8 @@ export default function ContactInfo({ initialValues }) {
         <label htmlFor="last-name">Last name*</label>
         <input
           type="text"
-          name="lastName"
+          {...register("contact.lastName")}
           id="last-name"
-          defaultValue={initialValues?.lastName || ""}
           required
         />
       </div>
@@ -27,19 +28,17 @@ export default function ContactInfo({ initialValues }) {
         <label htmlFor="first-name-preferred">Preferred first name*</label>
         <input
           type="text"
-          name="firstNamePreferred"
+          {...register("contact.firstNamePreferred")}
           id="first-name-preferred"
-          defaultValue={initialValues?.firstNamePreferred || ""}
         />
       </div>
-      <PronounOptions initialValues={initialValues} />
+      <PronounOptions />
       <div className="form-group w-full">
         <label htmlFor="email">Email *</label>
         <input
           type="email"
-          name="email"
+          {...register("contact.email")}
           id="email"
-          defaultValue={initialValues?.email || ""}
           required
         />
       </div>

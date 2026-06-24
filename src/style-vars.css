@@ -14,8 +14,9 @@
   --color-mono-800: #888;
   --color-yellow-200: goldenrod;
   --color-blue-100: cornflowerblue;
-  --color-purple-100: #bd9dff;
-  --color-purple-200: #9059ff;
+  --color-purple-100: hsl(260, 100%, 90%);
+  --color-purple-200: #bd9dff;
+  --color-purple-300: #9059ff;
   --color-purple-800: hsl(287, 35%, 29%);
   --color-purple-900: #391f40;
   --color-electric-mint: #afffd7;

@@ -1,6 +1,14 @@
 export default function LCSkills({ initialValues }) {
   return (
     <section className="skills">
+      {/* text name */}
+      {/* text issuingOrg */}
+      {/* month issueMonth */}
+      {/* year issueYear */}
+      {/* month expirationMonth */}
+      {/* year expirationYear */}
+      {/* text credentialId */}
+      {/* text credentialUrl */}
       <div className="form-group w-full">
         <label htmlFor="licenses-certs-skills">
           Licences, Certifications, and Skills

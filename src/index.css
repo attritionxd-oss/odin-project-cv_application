@@ -18,9 +18,17 @@ body {
 }
 
 h1 {
-  color: var(--color-purple-100);
+  color: var(--color-purple-200);
 }
 
 a {
+  color: var(--color-purple-200);
+}
+
+a:hover {
   color: var(--color-purple-100);
+}
+
+ul {
+  list-style: none;
 }

@@ -1,17 +1,15 @@
-const cacheKey = "form_cache";
-
-export async function getCachedData() {
-  const cached = localStorage.getItem(cacheKey);
+export async function getCachedData(key) {
+  const cached = localStorage.getItem(key);
 
   if (cached) {
     return JSON.parse(cached);
   }
 }
 
-export async function setCachedData(data) {
-  localStorage.setItem(cacheKey, JSON.stringify(data));
+export async function setCachedData(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
 }
 
-export async function removeCachedData() {
-  localStorage.removeItem(cacheKey);
+export async function removeCachedData(key) {
+  localStorage.removeItem(key);
 }

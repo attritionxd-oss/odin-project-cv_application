@@ -22,7 +22,7 @@ export default function Experience({ initialValues }) {
           type="text"
           name="experience"
           id="work-experience-entry"
-          defaultValue={initialValues.experience}
+          defaultValue={initialValues?.experience || ""}
         />
       </div>
       <a>Add Experience</a>
