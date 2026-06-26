@@ -1,6 +1,8 @@
 import { useFormContext, useFieldArray } from "react-hook-form";
 import EducationSchoolInfo from "./EducationSchoolInfo";
 import MonthYearFields from "./MonthYearFields";
+import DeleteEntryButton from "./DeleteEntryButton";
+import AddEntryButton from "./AddEntryButton";
 
 export default function Education() {
   const { control } = useFormContext();
@@ -35,36 +37,28 @@ export default function Education() {
               yearField="endYear"
             />
             {fields.length > 1 && (
-              <>
-                <button
-                  type="button"
-                  className="button-entry entry-delete"
-                  onClick={() => remove(index)}
-                >
-                  Delete entry
-                </button>
-              </>
+              <DeleteEntryButton
+                index={index}
+                buttonLabel="Delete entry"
+                remove={remove}
+              />
             )}
           </fieldset>
         ))}
       </fieldset>
-      <button
-        type="button"
-        className="button-entry"
-        onClick={() =>
-          append({
-            schoolName: "",
-            degree: "",
-            field: "",
-            startMonth: "",
-            startYear: "",
-            endMonth: "",
-            endYear: "",
-          })
-        }
-      >
-        Add Education
-      </button>
+      <AddEntryButton
+        buttonLabel="Add education"
+        defaultVals={{
+          schoolName: "",
+          degree: "",
+          field: "",
+          startMonth: "",
+          startYear: "",
+          endMonth: "",
+          endYear: "",
+        }}
+        append={append}
+      />
     </section>
   );
 }
