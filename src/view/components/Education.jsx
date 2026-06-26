@@ -1,11 +1,9 @@
 import { useFormContext, useFieldArray } from "react-hook-form";
 import EducationSchoolInfo from "./EducationSchoolInfo";
-import EducationStartDate from "./EducationStartDate";
-import EducationEndDate from "./EducationEndDate";
-// import EducationModal from "./EducationModal";
+import MonthYearFields from "./MonthYearFields";
 
 export default function Education() {
-  const { register, control } = useFormContext();
+  const { control } = useFormContext();
 
   const { fields, append, remove } = useFieldArray({
     control,
@@ -14,14 +12,6 @@ export default function Education() {
 
   return (
     <section className="education form-group">
-      {/* text school */}
-      {/* text degree */}
-      {/* text field of study */}
-      {/* title Start date */}
-      {/* month start_month */}
-      {/* year start_year */}
-      {/* month end_month */}
-      {/* year end_year */}
       <h3>Education</h3>
       <fieldset className="entries">
         {fields.map((field, index) => (
@@ -30,8 +20,20 @@ export default function Education() {
               <legend className="entry-legend">Degree {index + 1}</legend>
             )}
             <EducationSchoolInfo index={index} />
-            <EducationStartDate index={index} />
-            <EducationEndDate index={index} />
+            <MonthYearFields
+              index={index}
+              span="Start"
+              fieldGroup="educationEntries"
+              monthField="startMonth"
+              yearField="startYear"
+            />
+            <MonthYearFields
+              index={index}
+              span="End"
+              fieldGroup="educationEntries"
+              monthField="endMonth"
+              yearField="endYear"
+            />
             {fields.length > 1 && (
               <>
                 <button
