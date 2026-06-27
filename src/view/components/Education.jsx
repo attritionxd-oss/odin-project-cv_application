@@ -3,6 +3,7 @@ import EducationSchoolInfo from "./EducationSchoolInfo";
 import MonthYearFields from "./MonthYearFields";
 import DeleteEntryButton from "./DeleteEntryButton";
 import AddEntryButton from "./AddEntryButton";
+import defaultValues from "../forms/formDefaultValues";
 
 export default function Education() {
   const { control } = useFormContext();
@@ -48,15 +49,7 @@ export default function Education() {
       </fieldset>
       <AddEntryButton
         buttonLabel="Add education"
-        defaultVals={{
-          schoolName: "",
-          degree: "",
-          field: "",
-          startMonth: "",
-          startYear: "",
-          endMonth: "",
-          endYear: "",
-        }}
+        defaultvals={defaultValues.defaultValues.educationEntries[0]}
         append={append}
       />
     </section>
